@@ -27,16 +27,16 @@ export default class News extends Component {
         }
     }
      async componentDidMount(){
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=42d98cb07cd54c44b5b5e9f43af125df&page=${this.state.page+1} `
-        let data = await fetch(url)
+        // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=42d98cb07cd54c44b5b5e9f43af125df&page=${this.state.page+1} `
+        let data = await fetch(`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=42d98cb07cd54c44b5b5e9f43af125df&page=${this.state.page+1} `)
         let parsedData = await data.json()
         console.log(parsedData);
         this.setState({articles:parsedData.articles})
     }
      handlePreviousClick=async()=>{
       console.log("prev")
-      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=42d98cb07cd54c44b5b5e9f43af125df&page=${this.state.page-1}`
-      let data = await fetch(url)
+      // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=42d98cb07cd54c44b5b5e9f43af125df&page=${this.state.page-1}`
+      let data = await fetch(`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=42d98cb07cd54c44b5b5e9f43af125df&page=${this.state.page-1}`)
       let parsedData = await data.json()
        
         this.setState({
@@ -46,8 +46,8 @@ export default class News extends Component {
      }
      handleNextClick=async()=>{
       console.log("next")
-      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=42d98cb07cd54c44b5b5e9f43af125df&page=${this.state.page+1}`
-      let data = await fetch(url)
+      // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=42d98cb07cd54c44b5b5e9f43af125df&page=${this.state.page+1}`
+      let data = await fetch(`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=42d98cb07cd54c44b5b5e9f43af125df&page=${this.state.page+1}`)
       let parsedData = await data.json()
        
 
